@@ -52,7 +52,7 @@ const OneSignalService = {
 
       // ✅ FIX: Hanya pakai web_url (hapus url)
       const payload = {
-        app_id: 95a26ab7-aa13-40c8-9195-65f3534c6aa3,
+        app_id: ONESIGNAL_APP_ID,
         include_player_ids: playerIds,
         headings: { "en": headings },
         contents: { "en": contents },
@@ -112,4 +112,5 @@ const OneSignalService = {
 
 
 module.exports = OneSignalService;
+
 
