@@ -52,14 +52,14 @@ const OneSignalService = {
 
       // ✅ FIX: Hanya pakai web_url (hapus url)
       const payload = {
-        app_id: ONESIGNAL_APP_ID,
+        app_id: 95a26ab7-aa13-40c8-9195-65f3534c6aa3,
         include_player_ids: playerIds,
         headings: { "en": headings },
         contents: { "en": contents },
         buttons: notifTemplate.buttons || [],
         
         // ✅ HANYA web_url (bukan url + web_url)
-        web_url: 'http://localhost:5001/dashboard',
+        web_url: 'https://studyflow.my.id/dashboard',
         
         // Appearance
         large_icon: "https://via.placeholder.com/192x192?text=📚",
@@ -112,3 +112,4 @@ const OneSignalService = {
 
 
 module.exports = OneSignalService;
+
