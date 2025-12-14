@@ -67,6 +67,8 @@ app.get('/health', (req, res) => {
   });
 });
 
+
+app.set('trust proxy', 1);
 /**
  * =========================
  *  Session (aman untuk Render)
@@ -88,11 +90,11 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: process.env.COOKIE_SECURE === 'true', // true kalau nanti pakai HTTPS + reverse proxy
-    httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000,
-    sameSite: 'lax',
-  },
+  secure: true,  // WAJIB untuk cross-origin
+  httpOnly: true,
+  maxAge: 24 * 60 * 60 * 1000,
+  sameSite: 'none',  // WAJIB untuk cross-origin
+},
 };
 
 if (USE_DB_SESSION) {
